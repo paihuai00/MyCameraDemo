@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.cxs.mycamerademo.camera.ImageActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <com.google.android.cameraview.CameraView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/camera"
+            />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/take_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            app:srcCompat="@drawable/ic_camera"
+            app:useCompatPadding="true"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageButton
+            android:id="@+id/ib_main_switch"
+            android:layout_width="70px"
+            android:layout_height="70px"
+            android:layout_gravity="end|bottom"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:src="@drawable/switch_camera"/>
+
+        <Button
+            android:id="@+id/album_btm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="相册"
+            />
+
+    </FrameLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:id="@+id/img_recyclerview"/>
+
+</LinearLayout>

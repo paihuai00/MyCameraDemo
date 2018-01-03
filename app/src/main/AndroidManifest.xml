@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cxs.mycamerademo">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:name=".MyApplication"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--图片显示-->
+        <activity android:name=".camera.ImageActivity"
+            android:screenOrientation="portrait"/>
+        <!--图片 直接发送-->
+        <activity android:name=".camera.ImageSendActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".camera.ImmediateSendActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".simple_mode_image.ImageSelectorActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".simple_mode_image.PreviewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".simple_mode_image.ClipImageActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!--视频显示-->
+        <activity android:name=".record.RecordActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--视频显示640 * 480-->
+        <activity android:name=".record.RecordActivity640_480"
+            android:screenOrientation="portrait"/>
+
+        <!--知乎拍照，适配7.0-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.cxs.mycamerademo.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+
+        <!--上传文件-->
+        <activity android:name=".post_file.PostFileActivity"
+            android:screenOrientation="portrait"/>
+
+
+    </application>
+
+</manifest>
